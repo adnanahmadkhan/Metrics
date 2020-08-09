@@ -26,8 +26,7 @@ router.get("/metric/*/sum", (req, res) => {
         fs.readFile(logFile, (err, data) => {
             // if error reading throw 500
             if(err) {
-                console.log("Error reading file: "+err)
-                res.status(500).render("../views/500.pug")
+                res.status(204).render("../views/500.pug")
                 return
             }
 
