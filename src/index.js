@@ -44,6 +44,6 @@ app.use(defaulterrors);
 /**
  * Main app listener
  */
-const listener = app.listen(process.env.port || 4000, () => {
+const listener = app.listen(process.env.port || 8080, () => {
     console.log("Server has started at -> localhost:"+listener.address().port);
 })
