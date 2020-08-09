@@ -3,7 +3,7 @@ import moment from 'moment';
 
 import fs from 'fs';
 const router = express.Router()
-const logFile = "../test.log";
+const logFile = "../metrics.log";
 
 /**
  * Function to calculate if a date time lies in the last hour
@@ -26,7 +26,7 @@ router.get("/metric/*/sum", (req, res) => {
         fs.readFile(logFile, (err, data) => {
             // if error reading throw 500
             if(err) {
-                res.status(204).render("../views/500.pug")
+                res.status(200).send({value: 0});
                 return
             }
 
